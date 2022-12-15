@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Mouse+Memoirs&family=Oswald:wght@200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Square+Peg&display=swap');
+body{
+    background: #131722 !important;
+    color: #fff !important;
+    font-family: 'Montserrat Alternates', sans-serif !important;
+}
+
+*{font-size: 20px;}
+
+img{
+    cursor: pointer;
+}
+
+p{
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+    line-height: 30px;
+}
+
+.fly{
+    position: absolute;
+    display: inline-block;
+    top: 5px;
+    right: 0;
+    transform: translateX(-40%);
+    background-color: black;
+    border: 3px solid #fff;
+    height:55px;
+    width:55px;
+    text-align: center;
+    padding-top: 9px;
+    border-radius: 50%;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+
+.spn{
+    position: absolute;
+    inset: 0;
+    background-color: #131722;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}

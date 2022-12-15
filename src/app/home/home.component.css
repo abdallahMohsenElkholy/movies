@@ -1,0 +1,20 @@
+.col-lg-4 p{
+    width: 20%;
+    height: 1px;
+    background-color: rgba(255, 255, 255,.3);
+}
+
+.ay7ag {
+    width: 100%;
+    border-bottom: 1px solid ;
+    font-size: 14px;
+    color: rgba(255, 255, 255,.3);
+    font-weight: lighter;
+}
+.bg-lord{
+    background-image: url(../../assets/img/PRC_214793452.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    margin: 0 0 50px ;
+}

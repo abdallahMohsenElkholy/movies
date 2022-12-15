@@ -1,0 +1,47 @@
+<div class="spn" *ngIf="!movie">
+    <div class="spinner-grow m-3 text-info" style="width: 3rem; height: 3rem;" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-grow m-3 text-danger" style="width: 2rem; height: 2rem;" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-grow m-3" style="width: 1rem; height: 1rem;" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-grow m-3 text-danger" style="width: 2rem; height: 2rem;" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-grow m-3 text-info" style="width: 3rem; height: 3rem;" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+<div class="container-fluid" *ngIf="movie">
+    <p class="alert alert-danger" *ngIf="msgErr!=''">The resource you requested could not be found.</p>
+    <div class="row">
+        <div class="col-md-4 position-relative">
+            <span class="fly" *ngIf="movie.vote_average"> {{movie.vote_average |cutNum}}</span>
+            <img [src]="imgSrc+movie.poster_path" class="w-100" alt="">
+            <img [src]="imgSrc+movie.profile_path" class="w-100" alt="">
+        </div>
+        <div class="col-md-8">
+            <h2>{{movie.title}}</h2>
+            <h2>{{movie.name}}</h2>
+            <p *ngIf="movie.first_air_date">first air date: <span class="text-info">{{movie.first_air_date}}</span></p>
+            <p *ngIf="movie.tagline" class="text-info fw-bolder"><span class="text-info">{{movie.tagline}}</span></p>
+            <span *ngIf="movie.also_known_as">also known as: </span>
+            <span *ngIf="movie.genres">genres : </span>
+            <span class="bg-info rounded py-1 px-2 d-inline-block me-3 mb-3"
+                *ngFor="let genr of movie.genres">{{genr.name}}</span>
+            <span [class]="dd?'bg-info rounded py-1 px-2 d-inline-block me-3 mb-3':'d-none'"
+                *ngFor="let genr of movie.also_known_as , let dd = odd">{{genr}}</span>
+            <p *ngIf="movie.vote_count">vote count : <span class="text-info">{{movie.vote_count}}</span></p>
+            <p *ngIf="movie.popularity">popularity: <span class="text-info">{{movie.popularity}}</span></p>
+            <p *ngIf="movie.place_of_birth">place of birth: <span class="text-info">{{movie.place_of_birth}}</span></p>
+            <p *ngIf="movie.birthday">birthday: <span class="text-info">{{movie.birthday}}</span></p>
+            <p *ngIf="movie.release_date">release date: <span class="text-info">{{movie.release_date}}</span></p>
+            <p class="text-white-50 mt-5">{{movie.overview | cutWard:250}}</p>
+            <p class="text-white-50 mt-5">{{movie.biography | cutWard:250}}</p>
+        </div>
+    </div>
+
+</div>

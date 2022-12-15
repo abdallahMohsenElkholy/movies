@@ -1,0 +1,39 @@
+<div class="spn" *ngIf="!moviesArr">
+  <div class="spinner-grow m-3 text-info" style="width: 3rem; height: 3rem;" role="status">
+      <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow m-3 text-danger" style="width: 2rem; height: 2rem;" role="status">
+      <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow m-3" style="width: 1rem; height: 1rem;" role="status">
+      <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow m-3 text-danger" style="width: 2rem; height: 2rem;" role="status">
+      <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow m-3 text-info" style="width: 3rem; height: 3rem;" role="status">
+      <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+<div *ngIf="moviesArr">
+  <header>
+    <div class="w-100">
+        <owl-carousel-o  [options]="customOptions"  >
+            <ng-container  *ngFor="let mov of moviesArr|slice :10:20">
+              <ng-template carouselSlide [id]="mov.id">
+                <img class="rounded-5 border border-3 border-white" [src]="imgSrc+mov.poster_path" [alt]="mov.alt" [title]="mov.title">
+              </ng-template>
+            </ng-container>
+          </owl-carousel-o>
+    </div>
+</header>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 col-lg-2 col-sm-6 position-relative"  [routerLink]="['/tv',mov.id]" *ngFor="let mov of moviesArr">
+            <span class="fly " *ngIf="mov.vote_average"> {{mov.vote_average |cutNum}}</span>
+            <img [src]="imgSrc+mov.poster_path" class="w-100" alt="">
+            <p>{{mov.name}}</p>
+        </div>
+    </div>
+</div>
+</div>

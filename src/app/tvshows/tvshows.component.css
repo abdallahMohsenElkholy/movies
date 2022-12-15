@@ -1,0 +1,10 @@
+header{
+    background-image: url(../../assets/img/pexels-eberhard-grossgasteiger-1624438.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    height: 90vh;
+    margin-bottom: 50px;
+}
+
